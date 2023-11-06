@@ -1,0 +1,2 @@
+
+package github.magnusp.people;
