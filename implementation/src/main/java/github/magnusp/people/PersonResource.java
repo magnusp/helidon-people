@@ -21,6 +21,7 @@ public class PersonResource {
     @Inject
     DSLContext dslContext;
 
+
     @Inject
     PersonMapper personMapper;
 

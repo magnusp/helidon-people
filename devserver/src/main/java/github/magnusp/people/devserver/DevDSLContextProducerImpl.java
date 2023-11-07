@@ -14,10 +14,6 @@ import javax.sql.DataSource;
 @Dependent
 @Priority(10000)
 public class DevDSLContextProducerImpl {
-	public DevDSLContextProducerImpl() {
-		System.out.println("Hello");
-	}
-
 	@Inject
 	DataSource dataSource;
 
