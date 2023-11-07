@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run application" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="io.helidon.Main" />
-    <module name="helidon-people" />
+    <module name="implementation" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
