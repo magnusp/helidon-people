@@ -4,6 +4,7 @@ package github.magnusp.people;
 import github.magnusp.people.infrastructure.TestcontainersConfigSource;
 import io.helidon.config.Config;
 import io.helidon.config.mp.MpConfig;
+import io.helidon.microprofile.config.ConfigCdiExtension;
 import io.helidon.microprofile.server.JaxRsCdiExtension;
 import io.helidon.microprofile.server.ServerCdiExtension;
 import io.helidon.microprofile.testing.junit5.AddBean;
@@ -13,14 +14,23 @@ import io.helidon.microprofile.testing.junit5.HelidonTest;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
+import org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @HelidonTest
+@DisableDiscovery
+@AddExtension(ServerCdiExtension.class)
+@AddExtension(JaxRsCdiExtension.class)
+@AddExtension(CdiComponentProvider.class)
+@AddBean(MockPersonRepository.class)
+@AddBean(MockPersonQueries.class)
+@AddBean(ConfigCdiExtension.class)
+@AddBean(PersonResource.class)
 class MainTest {
-/*
+
     @Inject
     private WebTarget target;
 
@@ -42,5 +52,4 @@ class MainTest {
                 .get(messageListType);
         assertThat(listPersonResponse).isNotNull();
     }
-*/
 }
