@@ -7,6 +7,6 @@
         bean-discovery-mode="annotated">
 	<alternatives>
 		<class>github.magnusp.people.devserver.DevDSLContextProducerImpl</class>
-		<class>github.magnusp.people.infrastructure.LiquibaseProducer</class>
 	</alternatives>
+
 </beans>

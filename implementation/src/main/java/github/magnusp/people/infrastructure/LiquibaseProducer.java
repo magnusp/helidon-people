@@ -10,7 +10,7 @@ import liquibase.resource.ClassLoaderResourceAccessor;
 import liquibase.resource.ResourceAccessor;
 import javax.sql.DataSource;
 
-@Alternative
+@Dependent
 public class LiquibaseProducer {
 	@Inject
 	DataSource dataSource;

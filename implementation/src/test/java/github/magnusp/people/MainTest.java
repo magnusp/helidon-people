@@ -24,14 +24,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @HelidonTest
-@DisableDiscovery
+/*@DisableDiscovery
 @AddExtension(ServerCdiExtension.class)
 @AddExtension(JaxRsCdiExtension.class)
 @AddExtension(CdiComponentProvider.class)
 @AddBean(MockPersonRepository.class)
 @AddBean(MockPersonQueries.class)
 @AddBean(ConfigCdiExtension.class)
-@AddBean(PersonResource.class)
+@AddBean(PersonResource.class)*/
 class MainTest {
 
     @Inject
