@@ -18,7 +18,10 @@ import org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 @HelidonTest
 @DisableDiscovery
@@ -46,10 +49,12 @@ class MainTest {
         GenericType<ListPersonResponse> messageListType = new GenericType<>() {
         };
 
+        when(mockPersonQueries.getProxy().all()).thenReturn(Collections.emptyList());
         ListPersonResponse listPersonResponse = target
                 .path("person")
                 .request()
                 .get(messageListType);
         assertThat(listPersonResponse).isNotNull();
+        assertThat(listPersonResponse.values()).isNotNull();
     }
 }

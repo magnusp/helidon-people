@@ -23,6 +23,6 @@ public class MockPersonQueries implements PersonQueries {
 
 	@Override
 	public List<Person> all() {
-		return null;
+		return proxy.all();
 	}
 }
