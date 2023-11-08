@@ -5,12 +5,5 @@
                            https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
         version="3.0"
         bean-discovery-mode="annotated">
-	<scan>
-		<exclude name="github.magnusp.people.query.PersonQueriesImpl">
-			<if-class-available name="github.magnusp.people.MockPersonQueries" />
-		</exclude>
-		<exclude name="github.magnusp.people.dao.PersonRepositoryImpl">
-			<if-class-available name="github.magnusp.people.MockPersonRepository" />
-		</exclude>
-	</scan>
+
 </beans>

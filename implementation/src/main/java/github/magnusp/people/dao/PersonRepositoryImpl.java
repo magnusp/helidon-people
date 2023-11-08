@@ -2,7 +2,9 @@ package github.magnusp.people.dao;
 
 import github.magnusp.people.Person;
 import github.magnusp.people.PersonMapper;
+import github.magnusp.people.infrastructure.VetoDuringTest;
 import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.inject.Vetoed;
 import jakarta.inject.Inject;
 import org.jooq.DSLContext;
 import org.jooq.generated.Tables;
@@ -10,7 +12,7 @@ import org.jooq.generated.tables.records.PersonRecord;
 
 import static org.jooq.generated.Tables.PERSON;
 
-@Dependent
+@VetoDuringTest
 public class PersonRepositoryImpl implements PersonRepository {
 
 	private final DSLContext dslContext;
