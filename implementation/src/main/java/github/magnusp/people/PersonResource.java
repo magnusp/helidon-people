@@ -1,6 +1,8 @@
 
 package github.magnusp.people;
 
+import github.magnusp.people.dao.PersonRepository;
+import github.magnusp.people.query.PersonQueries;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -13,42 +15,44 @@ import jakarta.ws.rs.core.MediaType;
 import org.jooq.DSLContext;
 import org.jooq.generated.tables.records.PersonRecord;
 
+import java.util.List;
+
 import static org.jooq.generated.Tables.PERSON;
 
 @Path("/person")
 public class PersonResource {
 
-    @Inject
-    DSLContext dslContext;
+    PersonRepository personRepository;
 
+    PersonQueries personQueries;
 
     @Inject
-    PersonMapper personMapper;
+    public PersonResource(PersonRepository personRepository, PersonQueries personQueries) {
+        this.personRepository = personRepository;
+        this.personQueries = personQueries;
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ListPersonResponse listPerson() {
-        var people = dslContext.selectFrom(PERSON).fetch().map(personMapper::mapFromRecord);
+        List<Person> people = personQueries.all();
         return new ListPersonResponse(people);
     }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Person createPerson(Person prototypePerson) {
-        PersonRecord personRecord = dslContext.newRecord(PERSON);
-        personRecord.setName(prototypePerson.name());
-        personRecord.insert();
-        return personMapper.mapFromRecord(personRecord);
+        return personRepository.create(prototypePerson.getName());
     }
 
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void updatePerson(@PathParam("id") Integer id, Person prototypePerson) {
-        var person = new Person(id, prototypePerson.name());
-        PersonRecord personRecord = personMapper.mapToRecord(person);
-        dslContext.attach(personRecord);
-        if(personRecord.update() == 0) {
+        Person person = personRepository.byId(id);
+        person.setName(prototypePerson.getName());
+        boolean result = personRepository.save(person);
+        if(!result) {
             throw new RuntimeException("Not found");
         }
     }

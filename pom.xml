@@ -19,6 +19,7 @@
     </modules>
 
     <properties>
+        <testcontainers.version>1.19.1</testcontainers.version>
     </properties>
 
 

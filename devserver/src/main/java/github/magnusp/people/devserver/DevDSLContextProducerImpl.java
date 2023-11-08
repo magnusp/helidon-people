@@ -10,6 +10,8 @@ import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @Dependent
 @Priority(10000)
@@ -20,7 +22,7 @@ public class DevDSLContextProducerImpl {
 	@Produces
 	@Alternative
 	public DSLContext dslContext() {
-		return DSL.using(dataSource, SQLDialect.H2);
+		return DSL.using(dataSource, SQLDialect.POSTGRES);
 	}
 
 }

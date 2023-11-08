@@ -1,6 +1,7 @@
 package github.magnusp.people.infrastructure;
 
 import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.inject.Alternative;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import liquibase.integration.jakarta.cdi.CDILiquibaseConfig;
@@ -9,7 +10,7 @@ import liquibase.resource.ClassLoaderResourceAccessor;
 import liquibase.resource.ResourceAccessor;
 import javax.sql.DataSource;
 
-@Dependent
+@Alternative
 public class LiquibaseProducer {
 	@Inject
 	DataSource dataSource;

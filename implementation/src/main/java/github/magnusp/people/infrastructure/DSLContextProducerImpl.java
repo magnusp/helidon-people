@@ -19,6 +19,6 @@ public class DSLContextProducerImpl {
 
 	@Produces
 	public DSLContext dslContext()  {
-		return DSL.using(dataSource, SQLDialect.H2);
+		return DSL.using(dataSource, SQLDialect.POSTGRES);
 	}
 }
