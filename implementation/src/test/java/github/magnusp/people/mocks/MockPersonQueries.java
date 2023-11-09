@@ -1,5 +1,6 @@
-package github.magnusp.people;
+package github.magnusp.people.mocks;
 
+import github.magnusp.people.Person;
 import github.magnusp.people.query.PersonQueries;
 import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;

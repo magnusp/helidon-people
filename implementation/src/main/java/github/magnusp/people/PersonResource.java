@@ -12,12 +12,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import org.jooq.DSLContext;
-import org.jooq.generated.tables.records.PersonRecord;
 
 import java.util.List;
-
-import static org.jooq.generated.Tables.PERSON;
 
 @Path("/person")
 public class PersonResource {

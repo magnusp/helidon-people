@@ -1,6 +1,7 @@
 
 package github.magnusp.people;
 
+import github.magnusp.people.mocks.MockPersonQueries;
 import io.helidon.microprofile.testing.junit5.HelidonTest;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.WebTarget;
@@ -9,12 +10,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.when;
 
 @HelidonTest
 class MainTest {
@@ -45,21 +44,6 @@ class MainTest {
                 .path("person")
                 .request()
                 .get(messageListType);
-        assertThat(listPersonResponse).isNotNull();
-        assertThat(listPersonResponse.values()).hasSize(1);
-    }
-
-    @Test
-    void testGreet2(
-    ) {
-        GenericType<ListPersonResponse> messageListType = new GenericType<>() {
-        };
-
-
-        ListPersonResponse listPersonResponse = target
-            .path("person")
-            .request()
-            .get(messageListType);
         assertThat(listPersonResponse).isNotNull();
         assertThat(listPersonResponse.values()).hasSize(1);
     }

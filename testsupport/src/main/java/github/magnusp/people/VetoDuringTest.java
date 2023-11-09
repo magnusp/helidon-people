@@ -1,5 +1,6 @@
-package github.magnusp.people.infrastructure;
+package github.magnusp.people;
 
+import jakarta.enterprise.inject.Default;
 import jakarta.inject.Qualifier;
 
 import java.lang.annotation.Documented;
