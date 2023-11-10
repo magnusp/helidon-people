@@ -73,7 +73,6 @@
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-cdi-jakarta</artifactId>
-			<version>4.24.0</version>
 		</dependency>
 
 		<dependency>
@@ -94,7 +93,6 @@
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
-			<version>3.18.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.assertj</groupId>
@@ -106,7 +104,6 @@
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>1.19.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
@@ -145,7 +142,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version>
 				<configuration>
 					<systemPropertyVariables>
 						<liquibase.shouldRun>false</liquibase.shouldRun>
@@ -153,22 +149,8 @@
 				</configuration>
 			</plugin>
 			<plugin>
-					<groupId>org.testcontainers</groupId>
-					<artifactId>testcontainers-jooq-codegen-maven-plugin</artifactId>
-					<version>0.0.3</version>
-
-				<dependencies>
-					<dependency>
-						<groupId>org.testcontainers</groupId>
-						<artifactId>postgresql</artifactId>
-						<version>${testcontainers.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.postgresql</groupId>
-						<artifactId>postgresql</artifactId>
-						<version>${version.lib.postgresql}</version>
-					</dependency>
-				</dependencies>
+				<groupId>org.testcontainers</groupId>
+				<artifactId>testcontainers-jooq-codegen-maven-plugin</artifactId>
 				<executions>
 					<execution>
 						<id>generate-jooq-sources</id>
