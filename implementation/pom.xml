@@ -64,32 +64,19 @@
 			<artifactId>helidon-microprofile-testing-junit5</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-cdi-jakarta -->
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-cdi-jakarta</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>io.helidon.integrations.cdi</groupId>
 			<artifactId>helidon-integrations-cdi-datasource-hikaricp</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-
-
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-jdk14</artifactId>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.jooq/jooq -->
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
@@ -99,25 +86,20 @@
 			<artifactId>assertj-core</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.testcontainers/postgresql -->
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>${mockito.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
