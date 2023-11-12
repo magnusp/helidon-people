@@ -1,7 +1,6 @@
-package github.magnusp.people.infrastructure;
+package github.magnusp.people;
 
 import jakarta.enterprise.context.Dependent;
-import jakarta.enterprise.inject.Alternative;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import liquibase.integration.jakarta.cdi.CDILiquibaseConfig;

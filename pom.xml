@@ -17,6 +17,7 @@
         <module>implementation</module>
         <module>devserver</module>
 	    <module>testsupport</module>
+        <module>migrations</module>
     </modules>
 
     <properties>
@@ -60,11 +61,9 @@
 
     </dependencyManagement>
 
-
     <build>
         <pluginManagement>
             <plugins>
-
                 <plugin>
                     <groupId>org.liquibase</groupId>
                     <artifactId>liquibase-maven-plugin</artifactId>
@@ -101,6 +100,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
 </project>
