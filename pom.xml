@@ -17,7 +17,7 @@
         <module>implementation</module>
         <module>devserver</module>
 	    <module>testsupport</module>
-        <module>migrations</module>
+        <module>migrator</module>
     </modules>
 
     <properties>

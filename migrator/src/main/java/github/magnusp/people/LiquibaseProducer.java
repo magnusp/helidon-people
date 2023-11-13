@@ -5,8 +5,9 @@ import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import liquibase.integration.jakarta.cdi.CDILiquibaseConfig;
 import liquibase.integration.jakarta.cdi.annotations.LiquibaseType;
-import liquibase.resource.ClassLoaderResourceAccessor;
 import liquibase.resource.ResourceAccessor;
+import liquibase.resource.SearchPathResourceAccessor;
+
 import javax.sql.DataSource;
 
 @Dependent
@@ -18,7 +19,7 @@ public class LiquibaseProducer {
 	@LiquibaseType
 	public CDILiquibaseConfig createConfig() {
 		CDILiquibaseConfig config = new CDILiquibaseConfig();
-		config.setChangeLog("liquibase/changelog.xml");
+		config.setChangeLog("changelog.xml");
 		return config;
 	}
 
@@ -31,7 +32,7 @@ public class LiquibaseProducer {
 	@Produces
 	@LiquibaseType
 	public ResourceAccessor createResourceAccessor() {
-		return new ClassLoaderResourceAccessor(getClass().getClassLoader());
+		return new SearchPathResourceAccessor();
 	}
 
 }
