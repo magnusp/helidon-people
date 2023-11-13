@@ -168,12 +168,9 @@
 						<database>
 							<includes>.*</includes>
 							<excludes>databasechangelog|databasechangeloglock</excludes>
-							<inputSchema>public</inputSchema>
 							<schemata>
 								<schema>
 									<inputSchema>public</inputSchema>
-
-									<outputSchema>PROD</outputSchema>
 								</schema>
 							</schemata>
 						</database>
